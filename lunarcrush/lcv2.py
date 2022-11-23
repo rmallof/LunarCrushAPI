@@ -4,9 +4,42 @@ import requests
 import urllib.parse
 from lunarcrush.base import LunarCrushABC
 
+"""
+# https://lunarcrush.com/api3/auth/request-access?requestAccess=lunar&platform=web&device=Firefox&deviceId=LDID-62b66a3d-a5f4-46c5-989b-678faa5d63ec&validator=wvuww0Tr05hnnwS5pZpuwOZh005rwTtS&clientVersion=lunar-20211013&userAgent=Mozilla/5.0%20(X11;%20Ubuntu;%20Linux%20x86_64;%20rv:105.0)%20Gecko/20100101%20Firefox/105.0&viewportSize=2560x672&screenSize=2560x1440&locale=en-US&token=null&timeZoneOffset=-1
 
+GET /api3/auth/request-access?requestAccess=lunar&platform=web&device=Firefox&deviceId=LDID-62b66a3d-a5f4-46c5-989b-678faa5d63ec&validator=wvuww0Tr05hnnwS5pZpuwOZh005rwTtS&clientVersion=lunar-20211013&userAgent=Mozilla%2F5.0%20(X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A105.0)%20Gecko%2F20100101%20Firefox%2F105.0&viewportSize=2560x672&screenSize=2560x1440&locale=en-US&token=null&timeZoneOffset=-1 HTTP/2
+Host: lunarcrush.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:105.0) Gecko/20100101 Firefox/105.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: https://lunarcrush.com/
+DNT: 1
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+TE: trailers
+
+https://lunarcrush.com/api3/coins/global/time-series?interval=1m
+GET /api3/coins/global/time-series?interval=1m HTTP/2
+Host: lunarcrush.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:105.0) Gecko/20100101 Firefox/105.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: https://lunarcrush.com/global-coin-metrics
+Authorization: Bearer dsq0zphbdtlvap8l9yefqtutmq4vin
+DNT: 1
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+If-Modified-Since: Tue, 01 Nov 2022 16:07:39 GMT
+TE: trailers
+"""
 class LunarCrush(LunarCrushABC):
-    _BASE_URL = 'https://api2.lunarcrush.com/v2'
+    _BASE_URL = 'https://api.lunarcrush.com/v2'
 
     def __init__(self, api_key=None):
         super().__init__(api_key)
